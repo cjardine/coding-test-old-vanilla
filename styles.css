@@ -1,0 +1,138 @@
+@keyframes fadeIn {
+    0% {
+        transform: translateY(-10px) scale(0.95);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.loading .loading-sprite {
+    display: block;
+    opacity: 1;
+}
+
+.loading-sprite {
+    display: none;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: opacity ease-in-out 300ms;
+    opacity: 0;
+}
+
+.loading-sprite img {
+    mix-blend-mode: darken;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    z-index: 100;
+    top: calc(30% - 24px);
+    left: calc(50% - 24px);
+}
+
+.main-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    transition: all ease-in-out 300ms;
+}
+
+
+ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 800px;
+    column-gap: 12px;
+    row-gap: 12px;
+
+}
+
+@media (max-width: 600px) {
+    ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+        padding: 0;
+        column-gap: 20px;
+        row-gap: 20px;
+
+    }
+}
+
+li {
+    list-style: none;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+}
+
+li:nth-child(1) {
+    animation-delay: calc(0.2s * (1 - 1));
+}
+
+li:nth-child(2) {
+    animation-delay: calc(0.2s * (2 - 1));
+}
+
+li:nth-child(3) {
+    animation-delay: calc(0.2s * (3 - 1));
+}
+
+li:nth-child(4) {
+    animation-delay: calc(0.2s * (4 - 1));
+}
+
+li:nth-child(5) {
+    animation-delay: calc(0.2s * (5 - 1));
+}
+
+li:nth-child(6) {
+    animation-delay: calc(0.2s * (6 - 1));
+}
+
+
+li img {
+    width: 100%;
+    display: block;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    overflow: hidden;
+    opacity: 1;
+}
+
+
+.tool-bar {
+    margin: 70px auto;
+    padding: 70px;
+    border-top: 1px solid #dadada;
+    width: auto;
+}
+
+button {
+    padding: 10px 20px;
+    border: transparent 1px solid;
+    border-radius: 4px;
+    background-color: #00aaee;
+    color: white;
+}
